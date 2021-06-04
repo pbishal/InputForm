@@ -95,6 +95,18 @@
             else
                 errorMobile.textContent = "Invalid mobile number"
           });
+
+          ///UC4 Password Validation
+          const password = document.querySelector("#pwd");
+          const errorPwd = document.querySelector(".pwd-error");
+          password.addEventListener('input', function () 
+          {
+            let pwdRegex = RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+              if (pwdRegex.test(password.value))
+                  errorPwd.textContent = "";
+              else
+                  errorPwd.textContent = "Invalid Password";
+            });
     </script>
 </body>
 </html>
