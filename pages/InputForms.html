@@ -83,6 +83,18 @@
             else
               errorEmail.textContent = "Invalid email"
         });
+
+        ///UC3 Mobile Number Validation
+        const mobileInput = document.querySelector("#tel");
+        const errorMobile = document.querySelector(".tel-error");
+        mobileInput.addEventListener('input', function ()
+          {
+            let mobileRegex = RegExp("^[0-9]{2}[ ]*[0-9]{10}$");
+            if (mobileRegex.test(mobileInput.value))
+                errorMobile.textContent = "";
+            else
+                errorMobile.textContent = "Invalid mobile number"
+          });
     </script>
 </body>
 </html>
