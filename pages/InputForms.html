@@ -59,6 +59,7 @@
         salary.addEventListener('input',function(){
             salaryOutput.textContent=salary.value;
         });
+
         ///UC1 Name validation
         const text=document.querySelector('#text');
         const textError=document.querySelector('.text-error');
@@ -69,6 +70,18 @@
             textError.textContent="";
             else 
             textError.textContent="Incorrect name";
+        });
+        
+        //UC2 Email Validation
+        const emailInput = document.querySelector("#email");
+        const errorEmail = document.querySelector(".email-error");
+        emailInput.addEventListener('input', function ()
+         {
+            let emailRegex = RegExp('^([a-z0-9A-Z])+([._+-]?[a-z0-9A-Z]+)*[@]{1}[a-z0-9A-Z]+[.]{1}[a-zA-Z]{3}([.]{1}[a-z]{2})?$');
+            if (emailRegex.test(emailInput.value))
+              errorEmail.textContent = "";
+            else
+              errorEmail.textContent = "Invalid email"
         });
     </script>
 </body>
